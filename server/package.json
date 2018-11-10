@@ -2,5 +2,13 @@
   "name": "tweetmap-server",
   "version": "0.1.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.9.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
 }
