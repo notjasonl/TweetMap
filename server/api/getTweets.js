@@ -1,5 +1,6 @@
 const axios = require('axios')
 const auth = require('../config/config.json')
+const getLocations = require('../modules/getLocations.js')
 
 exports.default = (req, res) => {
   let hashtag = req.query.hashtag;
@@ -11,5 +12,5 @@ exports.default = (req, res) => {
     },
     withCredentials: true
   })
-  
+
 }
