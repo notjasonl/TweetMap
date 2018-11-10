@@ -1,0 +1,19 @@
+{
+  "name": "tweetmap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jazon-liu/TweetMap.git"
+  },
+  "author": "Jason Liu, Brian Xiang, Max Chiu, Rithvik Bhogavilli, Pranav Tippa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jazon-liu/TweetMap/issues"
+  },
+  "homepage": "https://github.com/jazon-liu/TweetMap#readme"
+}
