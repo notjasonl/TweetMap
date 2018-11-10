@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jazon-liu/TweetMap/issues"
   },
-  "homepage": "https://github.com/jazon-liu/TweetMap#readme"
+  "homepage": "https://github.com/jazon-liu/TweetMap#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
 }
