@@ -1,0 +1,12 @@
+{
+  "twitter": {
+    "twitter-api": "",
+    "twitter-secret": "",
+    "twitter-bearer": ""
+  },
+  "watson": {
+    "version": "",
+    "iam_apikey": "",
+    "url": ""
+  }
+}
