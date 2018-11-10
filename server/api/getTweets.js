@@ -1,5 +1,5 @@
 const axios = require('axios')
-const auth = require('../config/config.json')
+const auth = require('../config/config.json').twitter
 
 exports.default = (req, res) => {
   let hashtag = req.query.hashtag;
@@ -11,5 +11,5 @@ exports.default = (req, res) => {
     },
     withCredentials: true
   })
-  
+
 }
