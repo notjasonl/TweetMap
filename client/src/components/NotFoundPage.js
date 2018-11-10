@@ -2,13 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const NotFoundPage = () => (
-  <div className={"header"}>
-    <h1>404 ERROR</h1>
-    <h2>The server could not find the URL you requested.</h2>
-
-    <Link to="/" className={"link"}>
-      Return to Home Page
-    </Link>
+  <div className="notf">
+    <div className="notfound">
+      <div className="notfound-404">
+        <h1>Oops!</h1>
+      </div>
+      <h2>404 - Page not found</h2>
+      <p>The server could not find the URL you requested.</p>
+      <Link to="/">Return To Home Page</Link>
+    </div>
   </div>
 );
 
