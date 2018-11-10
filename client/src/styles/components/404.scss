@@ -1,16 +1,12 @@
 .header {
+  background-image: url(../images/Galaxy.jpg);
   background-color: black;
-  color: green;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: darkorange;
   text-align: center;
-  padding: 5px;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
-.nav {
-  line-height: 30px;
-  background-color: #eeeeee;
-  height: 250px;
-  width: 300px;
-  float: left;
-  padding: 5px;
-}
-
-// float:middle;width:80px;height:80px
