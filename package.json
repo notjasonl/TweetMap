@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/jazon-liu/TweetMap/issues"
   },
-  "homepage": "https://github.com/jazon-liu/TweetMap#readme",
-  "devDependencies": {
-    "eslint": "^5.9.0"
-  }
+  "homepage": "https://github.com/jazon-liu/TweetMap#readme"
 }
