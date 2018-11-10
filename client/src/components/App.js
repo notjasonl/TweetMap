@@ -17,9 +17,6 @@ class App extends Component {
             rel="noopener noreferrer"
           >
             Learn React
-            <form action="">
-            <input type="text" name="name" placeholder="#">
-            </form>
           </a>
         </header>
       </div>
