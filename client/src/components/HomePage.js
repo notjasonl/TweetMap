@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import Radium, { StyleRoot } from "radium";
 import logo from "../images/TweetMapPointer.png";
+import down from "../images/down-arrow.svg";
+import watson from "../images/watson.svg";
+import twitter from "../images/twotter.svg";
+import world from "../images/worldwide.svg";
 
 //USE THIS
 import {
@@ -63,7 +67,7 @@ class App extends React.Component {
     logo: { display: "default" },
     warnDisplay: false
   };
-
+  myRef = React.createRef();
   checkRegex = event => {
     event.preventDefault();
     let regexCheck = /[!@#$%^&*(),.//;+-/'[\\\]\=~`?":{}|<>]/g.test(
@@ -101,13 +105,15 @@ class App extends React.Component {
                     setTimeout(() => {
                       this.setState({ load: defaultM }, () => {
                         setTimeout(() => {
-                          this.setState({logo:fadeOutUpr}, () => {
-                        setTimeout(() => {
-                          this.setState(
-                            { status: fadeInUpr, defaultS, logo: defaultM });
-                              }, 1000);
-                            }
-                          );
+                          this.setState({ logo: fadeOutUpr }, () => {
+                            setTimeout(() => {
+                              this.setState({
+                                status: fadeInUpr,
+                                defaultS,
+                                logo: defaultM
+                              });
+                            }, 1000);
+                          });
                         }, 1000);
                       });
                     }, 1000);
@@ -144,12 +150,16 @@ class App extends React.Component {
       }, 1000);
     });
   };
+  scrollDown = event => {
+    window.scrollTo({ behavior: "smooth" });
+    window.scrollTo(0, this.myRef.current.offsetTop);
+  };
   render() {
     return (
       <StyleRoot>
         <div className="HomeBack">
           <div className={"HomeScreen"}>
-           <button
+            <button
               className={"FormButt ReturnButt"}
               style={this.state.status}
               onClick={this.handleReturn}
@@ -157,10 +167,13 @@ class App extends React.Component {
               Search Again
             </button>
             <div>
-                  <label className={"HomeText ReturnButt"} style={this.state.status}>
-                    Showing results for #{this.state.tag}
-                  </label>
-                </div>
+              <label
+                className={"HomeText ReturnText"}
+                style={this.state.status}
+              >
+                Showing results for #{this.state.tag}
+              </label>
+            </div>
             <div className="FlexRow HeaderTitle">
               <img
                 src={logo}
@@ -176,7 +189,7 @@ class App extends React.Component {
                 Map
               </h1>
             </div>
-           
+
             <form onSubmit={this.checkRegex} className="HomeForm">
               <div className={"FormFlex"}>
                 <div>
@@ -184,7 +197,7 @@ class App extends React.Component {
                     Just a moment...
                   </label>
                 </div>
-                
+
                 <div style={this.state.input}>
                   <label className={"HomeText"}>#</label>
                   <input
@@ -207,6 +220,53 @@ class App extends React.Component {
                 </div>
               </div>
             </form>
+            <div className={"wrapDown"}>
+              <img
+                src={down}
+                className={"downArrow"}
+                onClick={this.scrollDown}
+                style={this.state.input}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className={"about"} ref={this.myRef} style={this.state.input}>
+          <div className={"aboutCol"}>
+          <h1 className={"techUsed"}>
+          Technologies Used
+          </h1>
+            <div className={"aboutRow"}>
+              <div className={"aboutCol tech"}>
+                <h1>Twitter API</h1>
+                <img src={twitter} className={"techImg"} />
+                <p>
+                  The Twitter API allows to search against recent tweets
+                  posted/published in the past 7 days.
+                </p>
+              </div>
+              <div className={"aboutCol tech"}>
+                <h1>Geocodio API</h1>
+                <img src={world} className={"techImg"} />
+                <p>
+                  Geocodio's RESTful API allows to perform forward and reverse
+                  geocoding lookups. Forward Geocoding is converting addresses
+                  to geographic locations (longitude & latitude). Reverse
+                  Geocoding is the exact opposite (longitude & latitude to
+                  street address).
+                </p>
+              </div>
+              <div className={"aboutCol tech"}>
+                <h1>IBM Watson</h1>
+                <img src={watson} className={"techImg"} />
+                <p>
+                  IBM Watson is AI powered and has the ability to analyze
+                  sentences (for TweetMap, up to 100 sentences per request) and
+                  return the "sentiment values", which are data points of how
+                  much emotion is showed within each sentence.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </StyleRoot>
