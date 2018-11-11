@@ -1,11 +1,11 @@
-const Twit = require('twit')
+const Twitter = require('twitter')
 const auth = require('../config/config.json')
 const formatTweets = require('../modules/formatTweets.js')
 
-let twitter = new Twit({
+let twitter = new Twitter({
   consumer_key: auth.consumerApiKey,
   consumer_secret: auth.consumerApiSecret,
-  access_token: auth.accessToken,
+  access_token_key: auth.accessToken,
   access_token_secret: auth.accessTokenSecret
 })
 
@@ -17,16 +17,17 @@ module.exports = (req, res) => {
   const city = req.query.city;
 
   twitter.get('search/tweets', {
-    q: `#${hashtag} lang:en place:${city}`
-  }, (err, data, res) => {
-    if (err) throw err
+    q: `#${hashtag} lang:en place:(Boston)`,
+    count: 100
+  }, (err, data, result) => {
+    // if (err) throw err
 
-    console.log(res)
+    console.log(data)
 
-    data = formatTweets(res)
+    data = formatTweets(data)
 
     res.status(200)
-    res.end(data)
+    res.json(data)
   })
 
 

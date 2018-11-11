@@ -1,11 +1,11 @@
 module.exports = (data) => {
   let res = []
 
-  for (var i = 0; i < data["results"].length; i++) {
+  for (var i = 0; i < data.length; i++) {
     let tweetText;
     console.log(tweetText["results"].length)
-    if (data["results"][i]["extended_tweet"] == undefined) {
-      tweetText = data["results"][i]["text"];
+    if (data[i]["extended_tweet"] == undefined) {
+      tweetText = data[i]["text"];
       tweetText = tweetText.replace(/&amp;/g, '&');
       if (tweetText.includes("https://t.co")) {
         tweetText = tweetText.substring(0,tweetText.length-24)
@@ -16,8 +16,8 @@ module.exports = (data) => {
       })
 
     }
-    else if (data["results"][i]["extended_tweet"] != undefined) {
-      tweetText = data["results"][i]["extended_tweet"]["full_text"];
+    else if (data[i]["extended_tweet"] != undefined) {
+      tweetText = data[i]["extended_tweet"]["full_text"];
       tweetText = tweetText.replace(/&amp;/g, '&');
       if (tweetText.includes("https://t.co")) {
         tweetText = tweetText.substring(0,tweetText.length-24)

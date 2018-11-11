@@ -6,7 +6,8 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "twit": "^2.2.11",
+    "sentiment": "^5.0.1",
+    "twitter": "^1.7.1",
     "watson-developer-cloud": "^3.13.0"
   }
 }

@@ -1,44 +1,10 @@
-const ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3')
-const config = require('../config/config.json').watson
-
-const toneAnalyzer = new ToneAnalyzerV3(config)
-
-const CHUNKSIZE = 100
+const Sentiment = require('sentiment')
+const sentiment = new Sentiment()
 
 module.exports = (data) => {
-  const chunkedData = []
-
-  for (const entry of data) {
-    for (const sent of entry.sentences) {
-      chunkedData.push({
-        sentence: sent,
-        geo: entry.geo
-      })
-    }
+  for (const tweet of data) {
+    tweet.sentiment = sentiment.analyze(tweet.text)
   }
 
-  let res = []
-
-  for (let i = 0; i < ~~(chunkedData.length / CHUNKSIZE); i++) {
-    const chunk = chunkedData.split(i, i + CHUNKSIZE)
-
-    const reqString = ''
-
-    for (const entry of chunk) {
-      reqString += ' ' + entry.sentence
-    }
-
-    const params = {
-      tone_input: { text: reqString },
-      content_type: 'application/json'
-    }
-
-    toneAnalyzer.tone(params, (err, res) => {
-      if (err) throw err
-
-      console.log(res)
-
-
-    })
-  }
+  return data
 }
