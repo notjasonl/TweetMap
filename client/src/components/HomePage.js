@@ -121,7 +121,7 @@ class App extends React.Component {
        <h1 className="HeaderHead bluetext">{" "}Tweet</h1>
        <h1 className="HeaderHead">Map</h1>
        </div>
-       <button className={"FormButt"} style={this.state.status} onClick={this.handleReturn}>Search Again</button>
+       <button className={"FormButt ReturnButt"} style={this.state.status} onClick={this.handleReturn}>Search Again</button>
       <form onSubmit={this.checkRegex} className="HomeForm">
       <div className={"FormFlex"}>
       <div>
