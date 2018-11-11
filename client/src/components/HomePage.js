@@ -6,6 +6,12 @@ import watson from "../images/watson.svg";
 import twitter from "../images/twotter.svg";
 import world from "../images/worldwide.svg";
 
+import brian from "../images/brian.jpg";
+import pranav from "../images/pranav.jpg";
+import rithvik from "../images/thiocc.jpg";
+import max from "../images/max.jpg";
+import jason from "../images/liu.jpg";
+
 //USE THIS
 import {
   headShake,
@@ -264,6 +270,75 @@ class App extends React.Component {
                   sentences (for TweetMap, up to 100 sentences per request) and
                   return the "sentiment values", which are data points of how
                   much emotion is showed within each sentence.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={"author"}>
+        <div className={"aboutCol"}>
+          <h1 className={"techUsed"}>
+          People
+          </h1>
+            <div className={"aboutRow"}>
+              <div className={"aboutCol authorSep"}>
+                <h1>Brian Xiang</h1>
+                <img src={brian} className={"techImg"} />
+                <p>
+                <span className={"boldSub"}>
+                School:</span> Thomas S. Wootton High School<br/>
+                <span className={"boldSub"}>
+                Grade:</span> Sophmore<br/>
+                <span className={"boldSub"}>
+                Role:</span>Backend, Heatmap
+                </p>
+              </div>
+              <div className={"aboutCol authorSep"}>
+                <h1>Jason Liu</h1>
+                <img src={jason} className={"techImg"} />
+                <p>
+                <span className={"boldSub"}>
+                School:</span>  Poolesville High School<br/>
+                <span className={"boldSub"}>
+                Grade:</span>  Sophmore<br/>
+                <span className={"boldSub"}>
+                Role:</span> Backend, Substitute
+                </p>
+              </div>
+              <div className={"aboutCol authorSep"}>
+                <h1>Max Chiu</h1>
+                <img src={max} className={"techImg"} style={this.state.input}/>
+                <p>
+                <span className={"boldSub"}>
+                School:</span>  Poolesville High School<br/>
+                <span className={"boldSub"}>
+                Grade:</span> Sophmore<br/>
+                <span className={"boldSub"}>
+                Role:</span> Frontend, Helper
+                </p>
+              </div>
+              <div className={"aboutCol authorSep"}>
+                <h1>Pranav Tippa</h1>
+                <img src={pranav} className={"techImg"} style={this.state.input}/>
+                <p>
+                <span className={"boldSub"}>
+                School:</span>  Poolesville High School<br/>
+                <span className={"boldSub"}>
+                Grade:</span> Sophmore<br/>
+                <span className={"boldSub"}>
+                Role:</span> Frontend, Rotation
+                </p>
+              </div>
+              <div className={"aboutCol authorSep"}>
+                <h1>Rithvik Bhogavilli</h1>
+                <img src={rithvik} className={"techImg"} style={this.state.input}/>
+                <p>
+                <span className={"boldSub"}>
+                School:</span> Poolesville High School<br/>
+                <span className={"boldSub"}>
+                Grade:</span> Sophmore<br/>
+                <span className={"boldSub"}>
+                Role:</span> Rotation, Research
                 </p>
               </div>
             </div>
