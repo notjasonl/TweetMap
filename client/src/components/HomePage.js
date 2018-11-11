@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Tweet from "./TweetPage.js";
 import Radium, { StyleRoot } from "radium";
 import logo from "../images/TweetMapPointer.png";
 import down from "../images/down-arrow.svg";
@@ -236,7 +237,7 @@ class App extends React.Component {
             </div>
           </div>
         </div>
-
+        <Tweet style={this.state.status}/>
         <div className={"about"} ref={this.myRef} style={this.state.input}>
           <div className={"aboutCol"}>
           <h1 className={"techUsed"}>
@@ -275,7 +276,7 @@ class App extends React.Component {
             </div>
           </div>
         </div>
-        <div className={"author"}>
+        <div className={"author"} style={this.state.input}>
         <div className={"aboutCol"}>
           <h1 className={"techUsed"}>
           People
