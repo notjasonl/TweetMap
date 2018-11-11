@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Radium, { StyleRoot } from "radium";
 import logo from "../images/TweetMapPointer.png";
 import down from "../images/down-arrow.svg";
-import watson from "../images/watson.svg";
+import npm from "../images/npm.svg";
 import twitter from "../images/twotter.svg";
 import world from "../images/worldwide.svg";
 
@@ -257,13 +257,13 @@ class App extends React.Component {
                 </p>
               </div>
               <div className={"aboutCol tech"}>
-                <h1>IBM Watson</h1>
-                <img src={watson} className={"techImg"} />
+                <h1>Sentiment NPM Package</h1>
+                <img src={npm} className={"techImg"} />
                 <p>
-                  IBM Watson is AI powered and has the ability to analyze
-                  sentences (for TweetMap, up to 100 sentences per request) and
-                  return the "sentiment values", which are data points of how
-                  much emotion is showed within each sentence.
+                  Sentiment is a NPM package that uses the AFINN wordlist to
+                  provide sentiment analysis on input text. The sentence given
+                  is split into words, which each have different connotations.
+                  The average of these words is the "score" of the sentence.
                 </p>
               </div>
             </div>
