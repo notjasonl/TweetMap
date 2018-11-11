@@ -3,7 +3,11 @@ module.exports = (data) => {
 
   for (var i = 0; i < data.length; i++) {
     let tweetText;
-    console.log(tweetText["results"].length)
+
+    if (data[i]["place"] == null) continue
+
+    let city = data[i]["place"]["full_name"]
+
     if (data[i]["extended_tweet"] == undefined) {
       tweetText = data[i]["text"];
       tweetText = tweetText.replace(/&amp;/g, '&');
@@ -12,7 +16,8 @@ module.exports = (data) => {
       }
 
       res.push({
-        text: tweetText
+        text: tweetText,
+        city: city
       })
 
     }
@@ -24,7 +29,8 @@ module.exports = (data) => {
       }
 
       res.push({
-        text: tweetText
+        text: tweetText,
+        city: city
       })
     }
   }

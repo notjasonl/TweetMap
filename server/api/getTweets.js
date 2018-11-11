@@ -1,21 +1,28 @@
-const Twitter = require('twitter')
+const fetch = require('node-fetch')
 const auth = require('../config/config.json')
 const formatTweets = require('../modules/formatTweets.js')
-
-let twitter = new Twitter({
-  consumer_key: auth.consumerApiKey,
-  consumer_secret: auth.consumerApiSecret,
-  access_token_key: auth.accessToken,
-  access_token_secret: auth.accessTokenSecret
-})
-
-
 
 module.exports = (req, res) => {
 
   const hashtag = req.query.hashtag;
   const city = req.query.city;
 
+  const url = "https://api.twitter.com/1.1/tweets/search/30day/dev1.json?query=%23" + hashtag + "%20lang%3Aen%20place%3A" + city
+  console.log(url)
+  fetch(url, {
+    method: "get",
+    headers: {
+      "Authorization": "Bearer " + auth.twitterBearer
+      }
+  })
+  .then(res => res.json())
+  .then(json => {
+    console.log(json)
+    let data = formatTweets(json["results"])
+    res.status(200)
+    res.json(data)
+  })
+  /*
   twitter.get('search/tweets', {
     q: `#${hashtag} lang:en place:(Boston)`,
     count: 100
@@ -29,6 +36,7 @@ module.exports = (req, res) => {
     res.status(200)
     res.json(data)
   })
+  */
 
 
 
