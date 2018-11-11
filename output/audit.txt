@@ -1,0 +1,15 @@
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Sat Nov 10 21:29:49 2018
+Invocation: foremost 
+Output directory: /Users/Suresh/Documents/git/TweetMap/output
+Configuration file: /usr/local/etc/foremost.conf
+------------------------------------------------------------------
+File: stdin
+Start: Sat Nov 10 21:29:49 2018
+Length: Unknown
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+Interrupt received at Sat Nov 10 21:29:56 2018
