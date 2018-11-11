@@ -6,10 +6,13 @@ const PORT = process.env.PORT || 3000
 
 const app = express()
 
-app.use(bodyParser)
+app.use(bodyParser.json())
 
 const handler = require('./api/getTweets.js')
 
+app.get('/', (req, res) => {
+  res.end('asdas')
+})
 app.get('/api/getTweets', handler)
 
 app.listen(PORT)
