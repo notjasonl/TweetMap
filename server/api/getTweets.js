@@ -22,24 +22,4 @@ module.exports = (req, res) => {
     res.status(200)
     res.json(data)
   })
-  /*
-  twitter.get('search/tweets', {
-    q: `#${hashtag} lang:en place:(Boston)`,
-    count: 100
-  }, (err, data, result) => {
-    // if (err) throw err
-
-    console.log(data)
-
-    data = formatTweets(data)
-
-    res.status(200)
-    res.json(data)
-  })
-  */
-
-
-
-
-
 }
