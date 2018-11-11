@@ -1,43 +1,36 @@
-const axios = require('axios')
+const Twit = require('twit')
 const auth = require('../config/config.json')
 const formatTweets = require('../modules/formatTweets.js')
-const testData = require('../sample.json')
+
+let twitter = new Twit({
+  consumer_key: auth.consumerApiKey,
+  consumer_secret: auth.consumerApiSecret,
+  access_token: auth.accessToken,
+  access_token_secret: auth.accessTokenSecret
+})
+
+
 
 module.exports = (req, res) => {
 
   const hashtag = req.query.hashtag;
   const city = req.query.city;
 
-  // const api = axios.create({
-  //   headers: {
-  //     Authorization: auth["twitter-bearer"]
-  //   },
-  //   withCredentials: true
-  // })
-  // const url = "https://api.twitter.com/1.1/search/30day/dev1.json?query=%23" + hashtag + " lang%3Aen place%3A" + city;
-  // console.log(url)
+  twitter.get('search/tweets', {
+    q: `#${hashtag} lang:en place:${city}`
+  }, (err, data, res) => {
+    if (err) throw err
 
-  axios({
-    method: 'get',
-    baseURL: 'https://api.twitter.com/1.1/search/30day/dev1.json',
-    params: {
-      query: `%23${hashtag} lang%3Aen place%3A${city}`
-    },
-    headers: {
-      Authorization: auth["twitter-bearer"]
-    },
-    withCredentials: true
+    console.log(res)
 
+    data = formatTweets(res)
+
+    res.status(200)
+    res.end(data)
   })
-    .then(resp => {
-      const data = formatTweets(resp.data)
 
-      res.status(200)
-      res.json(data)
-    })
-    .catch(err => {
-      console.error(err);
-    })
+
+
 
 
 }
