@@ -1,0 +1,22 @@
+TweetMap Features/Details
+
+Inputs
+	User Selects Hashtag (#)
+		User inputs a hashtag which they want to analyze the worldwide reactions towards.
+Tools
+	Twitter API
+		The Twitter API allows to search against recent tweets posted/published in the past 7 days.
+	Geocodio API
+		Geocodio's RESTful API allows to perform forward and reverse geocoding lookups.
+			Forward Geocoding is converting addresses to geographic locations (longitude & latitude).
+			Reverse Geocoding is the exact opposite (longitude & latitude to street address).
+	IBM Watson API
+		IBM Watson is AI powered and has the ability to analyze sentences (for TweetMap, up to 100 sentences per request) 
+		  and return the "sentiment values", which are data points of how much emotion is showed within each sentence.
+Outputs
+	Heat Map
+		Uses individual posts with the inputted hashtag tagged.
+	Emotions	
+		Displays a color gradient, using a number given by IBM Watson for the emotion of each post towards the topic of the hashtag.
+			Color Gradient - Red (Negative Reaction) to Green (Positive Reaction)
+		Shows overall regional reactions towards the topic of the hastag.
