@@ -1,8 +1,10 @@
 const axios = require('axios')
 const auth = require('../config/config.json')
-const formatTweets = require('../modules/getLocations.js')
+const formatTweets = require('../modules/formatTweets.js')
+const testData = require('../sample.json')
 
-exports.default = (req, res) => {
+module.exports = (req, res) => {
+  /*
   let hashtag = req.query.hashtag;
 
   const api = axios.create({
@@ -12,10 +14,11 @@ exports.default = (req, res) => {
     },
     withCredentials: true
   })
-  let url = "/search/tweets.json?q=%23" + hashtag
+  let url = "/search/tweets.json?q=%23" + hashtag + " lang%3Aen"
   api.get(url)
     .then(resp => {
-      formatTweets(resp)
+      formatTweets()
     })
-
+  */
+  formatTweets(testData)
 }
