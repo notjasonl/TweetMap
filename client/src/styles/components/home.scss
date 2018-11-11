@@ -1,5 +1,5 @@
 .HomeScreen {
-  background-image:url("../images/tweetmap-point.png");
+  background-image:url("../images/tweetmap-point40.png");
   height: 100vh;
   background-repeat: repeat-x;
   object-fit: scale-down;
@@ -8,42 +8,67 @@
   backdrop-filter: blur(5px); // No one supports non prefixed yet
   z-index: 1;
 }
-
+.bluetext{
+  color:#1DA1F2;;
+}
 .HomeBack {
-  background: grey;
+  background: darken(grey,30%);
+  align-content: center;
+}
+.HeaderTitle {
+  padding-top: 15vh;
+  color: white;
+   font-size: $l-size;
+   margin: 0;
+}
+.HeaderHead{
+  margin: 0;
+}
+.LogoImg{
+  height: $xl-size;
+  width: $xl-size;
+  padding-top: 1.5rem;
 }
 
+.FlexRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
 .HomeForm {
+  margin-top:10vh;
   overflow: auto;
   left: 0;
   right: 0;
   position:relative;
   z-index: 99;
   text-align: center;
-
 }
-.App {
-  text-align: center;
+.HomeInput {
+    padding:5px; 
+    border:2px solid #ccc;
+    width: 50vw; 
+    font-size: $l-size;
+    color: #1DA1F2;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.HomeText {
+  font-size: $l-size;
+  color: #1DA1F2;
+  font-weight: bold;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.FormFlex {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-content: center;
 }
-
-.App-link {
-  color: #61dafb;
+.FormButt {
+  margin-top: 4rem;
+  width: 9rem;
+  font-size: $m-size;
 }
 
 @keyframes App-logo-spin {
